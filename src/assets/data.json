@@ -1,0 +1,64 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "firstName": "Kali",
+      "lastName": "Stormes",
+      "favoriteColor": "#0f9a91"
+    },
+    {
+      "id": 2,
+      "firstName": "Selinda",
+      "lastName": "Spender",
+      "favoriteColor": "#497d34"
+    },
+    {
+      "id": 3,
+      "firstName": "Lil",
+      "lastName": "Beden",
+      "favoriteColor": "#74f16d"
+    },
+    {
+      "id": 4,
+      "firstName": "Brittaney",
+      "lastName": "Riolfi",
+      "favoriteColor": "#372eae"
+    },
+    {
+      "id": 5,
+      "firstName": "Pepito",
+      "lastName": "Kirkhouse",
+      "favoriteColor": "#785923"
+    },
+    {
+      "id": 6,
+      "firstName": "Lyndel",
+      "lastName": "Beardsworth",
+      "favoriteColor": "#14623d"
+    },
+    {
+      "id": 7,
+      "firstName": "Koral",
+      "lastName": "Tustin",
+      "favoriteColor": "#870a51"
+    },
+    {
+      "id": 8,
+      "firstName": "Markos",
+      "lastName": "Kee",
+      "favoriteColor": "#e26890"
+    },
+    {
+      "id": 9,
+      "firstName": "Barnabas",
+      "lastName": "Fairham",
+      "favoriteColor": "#7db8dd"
+    },
+    {
+      "id": 10,
+      "firstName": "Aubrey",
+      "lastName": "Albasini",
+      "favoriteColor": "#be381c"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+.branding {
+
+  .txt-branding{
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .img-branding{
+    width:"150px";
+    height:"150px";
+  }
+
+  &.small {
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    vertical-align: center;
+   
+    .txt-branding{
+      margin: auto;
+    }
+  
+    a{   
+      .img-branding{
+        width:15vh;
+        height: 15vh;
+        object-fit: contain;
+      }
+    }
+
+    &.completed{
+      .txt-branding{     
+        visibility: hidden;     
+      }
+    }
+  }
+
+
+}
