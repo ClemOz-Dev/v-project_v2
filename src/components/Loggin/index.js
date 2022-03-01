@@ -31,21 +31,21 @@ const Loggin = ({
 
   return (
     <div className="loggin">
-      {fieldValue.length === 0 ? <Branding /> : <div className="greetings-avatar" style={{ backgroundColor: userFavoriteColor }} />}
+      {fieldValue.length === 0 && userFullName.length === 0 ? <Branding /> : <div className="greetings-avatar" style={{ backgroundColor: userFavoriteColor }} />}
       {userFullName.length > 0 ? (
         <p className="greetings-text">Welcome {userFullName} !</p>
       ) : (
-        <label htmlFor="loggin-input">
+        <label className="identification--field" htmlFor="loggin-input">
           <input
             id="loggin-input"
             value={fieldValue}
             onChange={onChange}
             onKeyUp={onSubmit}
-            className="identification--input"
             aria-label="Identifiant input"
             placeholder="Identifiant"
           />
           <strong>{submitAttempted && 'Sorry you are not registered ...'}</strong>
+          <button hidden={!submitAttempted} type="button">S'enregistrer</button>
         </label>
       )}
     </div>

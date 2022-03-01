@@ -6,6 +6,7 @@ const mapStateToProps = (state) => ({
   isLoggedIn: state.auth.isLoggedIn,
   userFullName: state.auth.fullName,
   userFavoriteColor: state.auth.favoriteColor,
+  location: window.location.pathname,
 });
 
 const mapDispatchToProps = () => ({

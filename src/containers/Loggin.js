@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
-import { connectUser, updateField } from 'src/actions/auth';
+import { connectUser } from 'src/actions/auth';
+import { updateField } from 'src/actions/global';
 
 import Loggin from 'src/components/Loggin';
 
@@ -8,7 +9,7 @@ const mapStateToProps = (state) => ({
   members: state.members.members,
   userFullName: state.auth.fullName,
   userFavoriteColor: state.auth.favoriteColor,
-  fieldValue: state.auth.fieldValue,
+  fieldValue: state.global.fieldValue,
 });
 
 const mapDispatchToProps = (dispatch) => ({

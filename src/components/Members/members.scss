@@ -1,11 +1,14 @@
 .members{
-  margin-top: 15vh;
+  margin-top: 5vh;
   width: 100vw;
 
    .membersList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    height: auto;
+
+    overflow: auto; 
 
     .membersList--item{
       height: 100px;

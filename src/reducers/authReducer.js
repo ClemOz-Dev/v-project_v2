@@ -1,6 +1,5 @@
 import {
   CONNECT_USER,
-  UPDATE_FIELD,
 } from '../actions/auth';
 
 const initialState = {
@@ -11,7 +10,6 @@ const initialState = {
   fullName: '',
   favoriteColor: 'grey',
   loading: false,
-  fieldValue: '',
 };
 
 // All conditions for Authentification Reducer.
@@ -26,12 +24,6 @@ function authReducer(state = initialState, action) {
         fullName: `${action.user.firstName} ${action.user.lastName}`,
         favoriteColor: action.user.favoriteColor,
         isLoggedIn: true,
-      };
-
-    case UPDATE_FIELD:
-      return {
-        ...state,
-        fieldValue: action.value,
       };
 
     default:

@@ -1,18 +1,19 @@
 .loggin {
   background-color: #f0f;
-
   width: 100%;
-  height: 50%;
+  height: 80%;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  vertical-align: middle;
+  
+  .identification--field{
+    display: flex;
+    flex-direction: column;
+  }
 
-  .loggin--input,
-  .loggin--button-register{
-    width: 50%;
-    display: block;
-    margin: 0 auto 0 auto;
+  input,
+  button{    
+    margin: 10px auto 10px auto;
   }
 
   .loggin--error{
@@ -21,19 +22,17 @@
     color: red;
     padding: 0.5rem;
   }
-
     
     .greetings-avatar{
-      height: 64px;
-      width: 64px;
+      height: 100px;
+      width: 100px;
       border-radius: 50%; 
-      margin: 3vh;
+      margin: 10vh;
     }
     .greetings-text{
 
 
-    }
-  
+    } 
  
 
   

@@ -5,9 +5,10 @@ import classNames from 'classnames';
 import './navBar.scss';
 import Branding from '../../containers/Branding';
 
-const NavBar = ({ isLoggedIn, userFullName, userFavoriteColor }) => {
+const NavBar = ({ isLoggedIn, userFullName, userFavoriteColor, location }) => {
   const dynamicCss = classNames('navBar', {
     isNotAuth: !isLoggedIn,
+    homeConnected: location === '/',
   });
 
   return (

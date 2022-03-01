@@ -7,7 +7,7 @@ import PrivateRoute from '../PrivateRoute';
 
 import NavBar from '../../containers/NavBar';
 import Loggin from '../../containers/Loggin';
-import Members from '../Members';
+import Members from '../../containers/Members';
 
 import './styles.scss';
 
