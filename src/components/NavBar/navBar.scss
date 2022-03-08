@@ -10,28 +10,36 @@
   display: flex;
   border-bottom: solid .5px;
   
+  .avatar{
+    height: 64px;
+    width: 64px;
+    border-radius: 50%; 
+    margin: 3vh;   
+  }
+  
+  .userName{
+    font-size: large;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+  }
+
   &.isNotAuth {
     visibility: hidden;
   }
 
-  &.homeConnected {
+  &.logginPage {
 
-      p{
+      .userName{
           visibility: hidden;
       }
-      p:after {
+      .userName:after {
           content:''; 
           visibility: visible;      
       }
-  }
-
-  &.completed {
 
       .avatar{
-          height: 64px;
-          width: 64px;
-          border-radius: 50%; 
-          margin: 3vh;
+        display: none;
       }
   }
+
 }

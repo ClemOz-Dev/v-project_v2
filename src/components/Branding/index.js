@@ -8,13 +8,13 @@ import './branding.scss';
 const Branding = ({ isLoggedIn, location }) => {
   const dynamicCss = classNames('branding', {
     small: isLoggedIn,
-    completed: location !== '/',
+    noTLogginPage: location !== '/',
   });
 
   return (
     <div className={dynamicCss}>
       <h1 className="txt-branding">Venn Project</h1>
-      <Link to="/members">
+      <Link to="/profil">
         <img className="img-branding" src={Logo} alt="logo" />
       </Link>
     </div>
@@ -23,11 +23,7 @@ const Branding = ({ isLoggedIn, location }) => {
 
 Branding.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
-  location: PropTypes.string,
-};
-
-Branding.defaultProps = {
-  location: null,
+  location: PropTypes.string.isRequired,
 };
 
 export default Branding;

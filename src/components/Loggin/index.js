@@ -6,39 +6,46 @@ import './loggin.scss';
 const Loggin = ({
   members,
   connectUser,
-  updateField,
-  fieldValue,
-  userFullName,
-  userFavoriteColor,
+  currentUser,
 }) => {
   const [submitAttempted, setSubmitAttempted] = useState(false);
+  const [value, setValue] = useState('');
 
   function match(keyword) {
     return members.find((memberItem) => `${memberItem.firstName} ${memberItem.lastName}`.match(new RegExp(`^${keyword}$`, 'i')));
   }
 
   function onChange(event) {
-    updateField(event.target.value);
+    setValue(event.target.value);
   }
 
   function onSubmit(event) {
     if (event.key === 'Enter') {
+      const result = match(event.target.value);
       setSubmitAttempted(true);
-      connectUser(match(event.target.value));
-      localStorage.setItem('currentUser', JSON.stringify(members.find((memberItem) => `${memberItem.firstName} ${memberItem.lastName}`.match(new RegExp(`^${event.target.value}$`, 'i')))));
+      if (result) {
+        connectUser(match(event.target.value));
+        localStorage.setItem(
+          'currentUser', JSON.stringify(
+            members.find((memberItem) => `${memberItem.firstName} ${memberItem.lastName}`.match(
+              new RegExp(`^${event.target.value}$`, 'i'),
+            )),
+          ),
+        );
+      }
     }
   }
 
   return (
     <div className="loggin">
-      {fieldValue.length === 0 && userFullName.length === 0 ? <Branding /> : <div className="greetings-avatar" style={{ backgroundColor: userFavoriteColor }} />}
-      {userFullName.length > 0 ? (
-        <p className="greetings-text">Welcome {userFullName} !</p>
+      {value.length === 0 && !currentUser.id ? <Branding /> : <div className="greetings-avatar" style={{ backgroundColor: currentUser.favoriteColor }} />}
+      {currentUser.id ? (
+        <p className="greetings-text">Welcome {currentUser.fullName} !</p>
       ) : (
         <label className="identification--field" htmlFor="loggin-input">
           <input
             id="loggin-input"
-            value={fieldValue}
+            value={value}
             onChange={onChange}
             onKeyUp={onSubmit}
             aria-label="Identifiant input"
@@ -60,10 +67,7 @@ Loggin.propTypes = {
     favoriteColor: PropTypes.string.isRequired,
   })).isRequired,
   connectUser: PropTypes.func.isRequired,
-  updateField: PropTypes.func.isRequired,
-  fieldValue: PropTypes.string.isRequired,
-  userFavoriteColor: PropTypes.string.isRequired,
-  userFullName: PropTypes.string.isRequired,
+  currentUser: PropTypes.object.isRequired,
 };
 
 export default Loggin;

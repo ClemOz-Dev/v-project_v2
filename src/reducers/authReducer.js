@@ -4,11 +4,13 @@ import {
 
 const initialState = {
   isLoggedIn: false,
-  id: null,
-  firstName: '',
-  lastName: '',
-  fullName: '',
-  favoriteColor: 'grey',
+  currentUser: {
+    id: null,
+    firstName: '',
+    lastName: '',
+    fullName: '',
+    favoriteColor: 'grey',
+  },
   loading: false,
 };
 
@@ -18,11 +20,13 @@ function authReducer(state = initialState, action) {
     case CONNECT_USER:
       return {
         ...state,
-        id: action.user.id,
-        firstName: action.user.firstName,
-        lastName: action.user.lastName,
-        fullName: `${action.user.firstName} ${action.user.lastName}`,
-        favoriteColor: action.user.favoriteColor,
+        currentUser: {
+          id: action.user.id,
+          firstName: action.user.firstName,
+          lastName: action.user.lastName,
+          fullName: `${action.user.firstName} ${action.user.lastName}`,
+          favoriteColor: action.user.favoriteColor,
+        },
         isLoggedIn: true,
       };
 

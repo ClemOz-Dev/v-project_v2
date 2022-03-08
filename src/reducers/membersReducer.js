@@ -10,7 +10,6 @@ const initialState = {
 function membersReducer(state = initialState, action) {
   switch (action.type) {
     case SAVE_MEMBERS:
-      console.log(action);
       return {
         ...state,
         members: action.members,

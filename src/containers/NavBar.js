@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import NavBar from 'src/components/NavBar';
 
 const mapStateToProps = (state) => ({
+  currentUser: state.auth.currentUser,
   isLoggedIn: state.auth.isLoggedIn,
-  userFullName: state.auth.fullName,
-  userFavoriteColor: state.auth.favoriteColor,
-  location: window.location.pathname,
+  location: state.global.location,
 });
 
 const mapDispatchToProps = () => ({

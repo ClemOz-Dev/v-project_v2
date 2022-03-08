@@ -1,3 +1,5 @@
+@use 'src/styles/_vars';
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -5,3 +7,33 @@
   text-align: center;
 }
 
+.tagsList {
+  display: flex;
+ 
+}
+
+.tag{
+    height: 20px;
+    border: black solid 1px;
+    padding: 2px 4px 2px 4px;
+    margin: 4px;
+}
+
+
+.react {
+  background-color: rgba(vars.$reactColor, 0.2);
+  border: vars.$reactColor solid 0.5px;
+  color:  vars.$reactColor;
+}
+
+.fun {
+  background-color: rgba(vars.$funColor, 0.2);
+  border: vars.$funColor solid 0.5px;
+  color: vars.$funColor;
+}
+
+.academic{
+  background-color: rgba(vars.$academicColor, 0.2);
+  border: vars.$academicColor solid 0.5px;
+  color:  vars.$academicColor;
+}

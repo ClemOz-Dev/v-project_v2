@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import './navBar.scss';
 import Branding from '../../containers/Branding';
 
-const NavBar = ({ isLoggedIn, userFullName, userFavoriteColor, location }) => {
+const NavBar = ({
+  isLoggedIn, currentUser, location,
+}) => {
   const dynamicCss = classNames('navBar', {
     isNotAuth: !isLoggedIn,
-    homeConnected: location === '/',
+    logginPage: location === '/',
   });
 
   return (
     <div className={dynamicCss}>
-      {userFullName.length > 0 ? (
+      {currentUser.id ? (
         <>
-          <div className="avatar" style={{ backgroundColor: userFavoriteColor }} />
-          <p>{userFullName}</p>
+          <div className="avatar" style={{ backgroundColor: currentUser.favoriteColor }} />
+          <p className="userName">{currentUser.fullName}</p>
         </>
       ) : <p> </p>}
 
@@ -27,8 +28,8 @@ const NavBar = ({ isLoggedIn, userFullName, userFavoriteColor, location }) => {
 
 NavBar.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
-  userFullName: PropTypes.string.isRequired,
-  userFavoriteColor: PropTypes.string.isRequired,
+  currentUser: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
 };
 
 export default NavBar;

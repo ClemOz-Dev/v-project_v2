@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   connectUser: (token, nickname, email, id) => dispatch(connectUser(token, nickname, email, id)),
-  updateField: (value) => dispatch(updateField(value)),
+  updateField: (value, identifier) => dispatch(updateField(value, identifier)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Members);

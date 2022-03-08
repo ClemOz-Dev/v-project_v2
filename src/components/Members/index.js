@@ -44,17 +44,17 @@ const Members = ({ members }) => {
       />
       <ul className="membersList">
         {filteredMembers.length > 0 ? (filteredMembers.map((member) => (
-          <p
+          <div
             key={member.id}
             className={`membersList--item ${selectedMembers.includes(member.id) ? 'selected' : ''} `}
-            style={{ backgroundColor: member?.favoriteColor || 'grey' }}
+            style={{ backgroundColor: member?.favoriteColor }}
             onClick={() => {
               handleMemberSelection(member.id);
             }}
             data-id={member.id}
           >
             {Utils.getInitials(member.firstName, member.lastName)}
-          </p>
+          </div>
         ))) : 'Aucun membre ne correspond à la recherche actuelle'}
       </ul>
       <div className="invitation">

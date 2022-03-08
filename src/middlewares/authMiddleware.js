@@ -6,7 +6,6 @@ import {
 // Middleware configuration.
 const authMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
-  console.log(state);
   // const { token } = window.localStorage;
   switch (action.type) {
     case SUBMIT_LOGIN: {

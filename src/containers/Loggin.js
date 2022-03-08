@@ -7,14 +7,12 @@ import Loggin from 'src/components/Loggin';
 
 const mapStateToProps = (state) => ({
   members: state.members.members,
-  userFullName: state.auth.fullName,
-  userFavoriteColor: state.auth.favoriteColor,
-  fieldValue: state.global.fieldValue,
+  currentUser: state.auth.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateField: (value) => dispatch(updateField(value)),
-  connectUser: (token, nickname, email, id) => dispatch(connectUser(token, nickname, email, id)),
+  updateField: (value, identifier) => dispatch(updateField(value, identifier)),
+  connectUser: (user) => user && dispatch(connectUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Loggin);
