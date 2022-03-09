@@ -1,0 +1,72 @@
+@use 'src/styles/_vars';
+
+.close{
+  width:60px;
+  height:60px;
+  position: relative;
+  background: #455A64;
+  border-radius:50%;
+  box-shadow: 0 0 20px -5px rgba(white,.5);
+  transition: .25s ease-in-out;
+  cursor: pointer;
+  animation: fade-in .5 ease-out .25s both;
+  @keyframes fade-in {
+    from { opacity: 0; transform:scale(1.1) }
+  }
+  .circle {
+    path {
+      stroke: vars.$primary;
+      fill: none;
+      stroke-width: 2px/2;
+      stroke-linecap: round;
+      // animation: progress 2s ease-out .25s both;
+      @keyframes progress {
+        from { stroke-dasharray: 0 100; }
+      }
+    }
+  }
+  span{
+    display:block;
+    width:(60px/4) - 2px;
+    height:2px;
+    background: white;
+    box-shadow: 0 0 20px -5px rgba(white,.5);
+    border-radius: 20px;
+    position: absolute;  
+    transition: .25s ease-in-out;
+    // animation: slide-in.5s ease-in-out .25s both;
+    @keyframes slide-in {
+      from { width:0; }
+    }
+    &:nth-child(1){
+      top:(20px - (2px/2));
+      left:20px;
+      transform:rotate(45deg);
+      transform-origin: top left;
+    }
+    &:nth-child(2){
+      top:(20px - (2px/2));
+      right:20px;
+      transform:rotate(-45deg);
+      transform-origin: top right;
+    }
+    &:nth-child(3){
+      bottom:(20px - (2px/2));
+      left:20px;
+      transform:rotate(-45deg);
+      transform-origin: bottom left;
+    }
+    &:nth-child(4){
+      bottom:(20px - (2px/2));
+      right:20px;
+      transform:rotate(45deg);
+      transform-origin: bottom right;
+    }
+  }
+  &:hover{
+    background: #37474F;
+    span{
+      width:(60px/4);
+    }
+  }
+}

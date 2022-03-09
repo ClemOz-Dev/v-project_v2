@@ -1,0 +1,45 @@
+.projectModal{
+  background-color: rgba(197, 195, 196, 0.92);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;   
+
+ 
+
+  .content{
+    background-color: #fff;  
+    box-shadow: 0px 0px 5px 1px #5e5b5b;
+    width: 80%;
+
+    .header{  
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+     
+    }
+    
+
+    .body{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+
+    .footer{
+      padding: 10px;
+    }
+  }
+
+
+}

@@ -17,23 +17,34 @@
     border: black solid 1px;
     padding: 2px 4px 2px 4px;
     margin: 4px;
+    background-color: white ;
 }
 
 
 .react {
-  background-color: rgba(vars.$reactColor, 0.2);
-  border: vars.$reactColor solid 0.5px;
+  border: rgba(vars.$reactColor, 0.8) solid 0.5px;
   color:  vars.$reactColor;
 }
 
 .fun {
-  background-color: rgba(vars.$funColor, 0.2);
-  border: vars.$funColor solid 0.5px;
+  border:  rgba(vars.$funColor, 0.8) solid 0.5px;
   color: vars.$funColor;
 }
 
 .academic{
-  background-color: rgba(vars.$academicColor, 0.2);
-  border: vars.$academicColor solid 0.5px;
+  border:  rgba(vars.$academicColor, 0.8) solid 0.5px;
   color:  vars.$academicColor;
+}
+
+input {
+  font-family: inherit;
+  width: 60%;
+  border: 0;
+  border-bottom: 2px solid vars.$gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: vars.$white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
 }

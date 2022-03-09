@@ -2,21 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProjectCard from './projectCard';
+import Modal from '../ProjectModal';
 import './profil.scss';
 
-const Profil = ({ projects }) => {
+const Profil = ({ projects, membersShown, showMembersPage }) => {
   function createProject(event) {
     console.log(event);
   }
 
   return (
     <div className="profil">
-      <h1 className="title">Mes projets</h1>
-      <div className="tagsList">
-        <div className="tag fun">Fun</div>
-        <div className="tag react">React</div>
-        <div className="tag academic">Académique</div>
-      </div>
+      <Modal membersShown={membersShown} showMembersPage={showMembersPage} />
       {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
@@ -27,6 +23,8 @@ const Profil = ({ projects }) => {
 
 Profil.propTypes = {
   projects: PropTypes.array.isRequired,
+  showMembersPage: PropTypes.func.isRequired,
+  membersShown: PropTypes.bool.isRequired,
 };
 
 export default Profil;

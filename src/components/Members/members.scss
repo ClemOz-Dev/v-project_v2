@@ -1,17 +1,30 @@
-.members{
-  margin-top: 5vh;
+.members{  
   width: 100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
 
    .membersList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
-
-    overflow: auto; 
+    overflow: scroll; 
 
     .membersList--item{
-      height: 100px;
+      height: 90px;
       flex: 0 0 25%;
       margin: 3%;
       border-radius: 50%;

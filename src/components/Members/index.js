@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Utils from '../../Utils';
+import CloseButton from '../shared/CloseButton';
 import './members.scss';
 
-const Members = ({ members }) => {
+const Members = ({ members, showMembersPage }) => {
   const [selectedMembers, setSelectedMembers] = useState([]);
   const [filteredMembers, setFilteredMembers] = useState(members);
   const [value, setValue] = useState('');
@@ -35,13 +36,16 @@ const Members = ({ members }) => {
 
   return (
     <div className="members">
-      <input
-        type="text"
-        value={value}
-        onChange={onChange}
-        aria-label="Identifiant input"
-        placeholder="Recherche..."
-      />
+      <div className="header">
+        <input
+          type="text"
+          value={value}
+          onChange={onChange}
+          aria-label="Identifiant input"
+          placeholder="Recherche..."
+        />
+        <CloseButton action={showMembersPage} />
+      </div>
       <ul className="membersList">
         {filteredMembers.length > 0 ? (filteredMembers.map((member) => (
           <div
@@ -77,6 +81,7 @@ Members.propTypes = {
     lastName: PropTypes.string.isRequired,
     favoriteColor: PropTypes.string.isRequired,
   })).isRequired,
+  showMembersPage: PropTypes.func.isRequired,
 };
 
 export default Members;
