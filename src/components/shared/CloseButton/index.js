@@ -5,7 +5,7 @@ import './closeButton.scss';
 
 const CloseButton = ({ action }) => {
   function actionFunct() {
-    console.log('clic');
+    action();
   }
 
   return (

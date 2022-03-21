@@ -19,17 +19,17 @@ const Members = ({ members, showMembersPage }) => {
   }
 
   function submitInvitations(event) {
-    console.log(event);
+    console.log(selectedMembers);
   }
 
   function onChange(event) {
     setValue(event.target.value);
     const filteredData = members.filter((member) => {
       const searchStr = event.target.value.toLowerCase();
-      const nameMatches = member.firstName.toLowerCase().includes(searchStr);
-      const daysMatches = member.lastName.toString().includes(searchStr);
+      const firstNameMatches = member.firstName.toLowerCase().includes(searchStr);
+      const lastNameMatches = member.lastName.toString().includes(searchStr);
 
-      return nameMatches || daysMatches;
+      return firstNameMatches || lastNameMatches;
     });
     setFilteredMembers(filteredData);
   }

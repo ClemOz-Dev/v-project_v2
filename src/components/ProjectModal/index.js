@@ -8,11 +8,20 @@ const ProjectModal = ({ project, membersShown, showMembersPage }) => {
   const [value, setValue] = useState('');
   const [selection, setSelection] = useState([]);
   const [selectOption, setSelectOption] = useState('default');
-
+  const [currentProject, setCurrentProject] = useState({
+    id: null,
+    title: 'Nouveau Projet',
+    tags: [],
+    members: [],
+  });
   const tags = ['React', 'Fun', 'Academic'];
 
   function onChangeInput(event) {
     setValue(event.target.value);
+    setCurrentProject((prevState) => ({
+      ...prevState,
+      title: event.target.value,
+    }));
   }
 
   function onChangeSelect(event) {
@@ -26,7 +35,6 @@ const ProjectModal = ({ project, membersShown, showMembersPage }) => {
   }
 
   function openMembers() {
-    console.log('clic');
     showMembersPage();
   }
 
@@ -35,7 +43,7 @@ const ProjectModal = ({ project, membersShown, showMembersPage }) => {
       {membersShown && <Members />}
       <div className="content">
         <div className="header">
-          <h2 className="header--title">{project.name}</h2>
+          <h2 className="header--title">{project.title}</h2>
           <div>
             <button type="button" className="close">Annuler</button>
           </div>
@@ -76,7 +84,8 @@ const ProjectModal = ({ project, membersShown, showMembersPage }) => {
 ProjectModal.propTypes = {
   project: PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string,
+
   }),
   membersShown: PropTypes.bool.isRequired,
   showMembersPage: PropTypes.func.isRequired,
@@ -85,7 +94,9 @@ ProjectModal.propTypes = {
 ProjectModal.defaultProps = {
   project: {
     id: null,
-    name: 'Nouveau projet',
+    title: 'Nouveau Projet',
+    tags: [],
+    members: [],
   },
 };
 
